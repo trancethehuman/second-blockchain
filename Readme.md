@@ -1,1 +1,1 @@
-#HaiCoin 2.0
+# HaiCoin 2.0
