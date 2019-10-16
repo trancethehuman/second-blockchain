@@ -1,5 +1,5 @@
 # HaiCoin 2.0
-### Build upon HaiCoin 1.0, with better documentation and stuff.
+### Built upon HaiCoin 1.0, with better documentation and stuff.
 
 ## Files
 
