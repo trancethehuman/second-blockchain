@@ -18,13 +18,28 @@ class Blockchain {
         this.pendingTransactions = [];
         this.miningReward = 100;
     }
-
     createGenesisBlock() {
-        let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0');
-        let yyyy = today.getFullYear();
-        today = mm + '/' + dd + '/' + yyyy;
-        return new Block(Date.parse(today));
+        return new Block(Date.now(),[],"0");
+    }
+    getLatestBlock() {
+        return this.chain[this.chain.length - 1]; //Getting hash of latest block
+    }
+}
+
+class Transaction {
+    constructor(fromAddress, toAddress, amount) {
+        this.fromAdress = fromAddress;
+        this.toAddress = toAddress;
+        this.amount = amount;
+    }
+    createTransaction(transaction) {
+        this.pendingTransactions.push(transaction);
+    }
+    minePendingTransactions(miningRewardAddress) {
+        let block = new Block(Date.now(),this.pendingTransactions, this.getLatestBlock().hash);
+        block.mineBlock(this.difficulty);
+        console.log("Block successfully mined")
+        this.chain.push(block);
+        this.pendingTransactions(null, miningRewardAddress,this.miningReward);
     }
 }
