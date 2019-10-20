@@ -19,4 +19,8 @@ cryptoJS: for hashing
 - hash: quick definition: takes in an input (previous hash + timestamp + pending transactions + nonce), and generates an output that makes it impossible to reverse engineer. The hash calculation in this blockchain uses sha256 (which is taken from cryptojs).
 - nonce: increase this variable as I try different combinations of hashes so that I don't try the same hash twice. This is basically mining coins $$$$.
 
+## How to use:
+- Retrieve Balance:
+- Block validation:
+
 
